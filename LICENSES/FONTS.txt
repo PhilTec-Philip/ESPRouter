@@ -1,0 +1,12 @@
+Embedded webfont
+================
+
+Share Tech Mono
+Copyright (c) 2011, Ray Larabie (typodermicfonts.com), Typodermic Fonts Inc.
+File: share-tech-mono-latin-400-normal.woff2
+SHA-256: 41E6B9F297F7D9A2DF2AAA274092F76D2F72711A15CA455F7F4F4F92CAF16B72
+License: SIL Open Font License 1.1, see OFL-1.1.txt
+
+The source file is stored in assets/fonts and embedded in src/fonts.h.
+The WOFF2 file originates from the Fontsource package
+(https://fontsource.org), which distributes the OFL font.
