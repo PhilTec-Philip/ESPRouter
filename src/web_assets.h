@@ -11,38 +11,6 @@ static const char WEB_CSS[] PROGMEM = R"=====(
   src: url('/fonts/share-tech-mono-400.woff2') format('woff2');
 }
 
-:root {
-  --font-display: 'Share Tech Mono', Consolas, 'Courier New', monospace;
-  --font-mono: 'Share Tech Mono', Consolas, 'Courier New', monospace;
-  color-scheme: light;
-  --bg-body: #ffffff;
-  --bg-card: #ffffff;
-  --bg-section-alt: #f8f9fa;
-  --text-primary: #111111;
-  --text-heading: #000000;
-  --text-subheading: #222222;
-  --text-muted: #666666;
-  --border: #111111;
-  --accent: #007a8f;
-  --accent-hover: #005b6b;
-  --accent-glow: rgba(0, 122, 143, 0.1);
-  --plate-bg: #ffffff;
-  --plate-text: #000000;
-  --plate-text-dim: #444444;
-  --footer-bg: #ffffff;
-  --footer-text: #111111;
-  --footer-text-muted: #666666;
-  --lcd-bg: #cbd5e1;
-  --lcd-border: #111111;
-  --lcd-text: #000000;
-  --lcd-dim: #444444;
-  --lcd-grid: rgba(0, 122, 143, 0.25);
-  --shadow-sm: rgba(0, 0, 0, 0.15);
-  --shadow-md: rgba(0, 0, 0, 0.25);
-  --danger: #b3261e;
-  --danger-bg: rgba(179, 38, 30, 0.08);
-}
-
 *,
 *::before,
 *::after {
@@ -53,14 +21,15 @@ static const char WEB_CSS[] PROGMEM = R"=====(
 }
 
 html {
-  background: var(--footer-bg);
+  color-scheme: light;
+  background: #ffffff;
   scroll-behavior: smooth;
 }
 
 body {
-  font-family: var(--font-mono);
-  background: var(--bg-body);
-  color: var(--text-primary);
+  font-family: 'Share Tech Mono', Consolas, 'Courier New', monospace;
+  background: #ffffff;
+  color: #111111;
   line-height: 1.7;
   min-height: 100vh;
   display: flex;
@@ -79,11 +48,11 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--border);
+  background: #111111;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--accent);
+  background: #007a8f;
 }
 
 a:focus-visible,
@@ -91,12 +60,12 @@ button:focus-visible,
 input:focus-visible,
 select:focus-visible,
 label:has(input:focus-visible) {
-  outline: 2px dashed var(--accent);
+  outline: 2px dashed #007a8f;
   outline-offset: 2px;
 }
 
 ::selection {
-  background: var(--accent);
+  background: #007a8f;
   color: #0c0f11;
 }
 
@@ -104,8 +73,8 @@ header {
   position: sticky;
   top: 0;
   z-index: 999;
-  background: var(--plate-bg);
-  border-bottom: 1px solid var(--border);
+  background: #ffffff;
+  border-bottom: 1px solid #111111;
   padding: 0.75rem 2rem;
   display: flex;
   align-items: center;
@@ -120,7 +89,7 @@ header {
   left: 0;
   width: 0;
   height: 3px;
-  background: var(--accent);
+  background: #007a8f;
   z-index: 1;
   pointer-events: none;
   transition: width 0.05s linear;
@@ -140,9 +109,9 @@ header {
 }
 
 .header-left h1 {
-  font-family: var(--font-display);
+  font-family: 'Share Tech Mono', Consolas, 'Courier New', monospace;
   font-size: 1.35rem;
-  color: var(--plate-text);
+  color: #000000;
   font-weight: 400;
   letter-spacing: 2px;
   text-transform: uppercase;
@@ -151,23 +120,23 @@ header {
 
 .brand-eyebrow {
   margin-top: 0.18rem;
-  color: var(--plate-text-dim);
-  font-family: var(--font-display);
+  color: #444444;
+  font-family: 'Share Tech Mono', Consolas, 'Courier New', monospace;
   font-size: 0.68rem;
   letter-spacing: 2px;
   text-transform: uppercase;
 }
 
 .brand-eyebrow span {
-  color: var(--accent);
+  color: #007a8f;
 }
 
 .version-tag {
   display: inline-block;
   padding: 0.12rem 0.45rem;
-  border: 1px solid var(--accent);
-  color: var(--accent);
-  font-family: var(--font-display);
+  border: 1px solid #007a8f;
+  color: #007a8f;
+  font-family: 'Share Tech Mono', Consolas, 'Courier New', monospace;
   font-size: 0.68rem;
   line-height: 1.4;
   letter-spacing: 2px;
@@ -182,10 +151,10 @@ nav {
 }
 
 nav a {
-  color: var(--plate-text-dim);
+  color: #444444;
   text-decoration: none;
   padding: 0.45rem 0.9rem;
-  font-family: var(--font-mono);
+  font-family: 'Share Tech Mono', Consolas, 'Courier New', monospace;
   font-size: 0.82rem;
   font-weight: 500;
   text-transform: uppercase;
@@ -197,14 +166,14 @@ nav a {
 
 nav a:hover {
   background: rgba(127, 127, 127, 0.1);
-  color: var(--plate-text);
+  color: #000000;
 }
 
 nav a.active {
   background: rgba(127, 127, 127, 0.12);
-  color: var(--plate-text);
+  color: #000000;
   font-weight: 700;
-  box-shadow: inset 0 -2px 0 var(--accent);
+  box-shadow: inset 0 -2px 0 #007a8f;
 }
 
 main {
@@ -213,16 +182,16 @@ main {
   width: 100%;
   margin: 2.5rem auto 0;
   padding: 0 2rem 2.5rem;
-  background: var(--bg-body);
+  background: #ffffff;
 }
 
 .hero {
   text-align: center;
   padding: 3rem 2rem;
-  background: var(--plate-bg);
+  background: #ffffff;
   margin-bottom: 2rem;
-  border: 1px solid var(--border);
-  box-shadow: 4px 4px 0 var(--shadow-sm);
+  border: 1px solid #111111;
+  box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.15);
   position: relative;
   overflow: hidden;
 }
@@ -233,15 +202,15 @@ main {
 
 .hero-eyebrow,
 .section-eyebrow {
-  color: var(--text-muted);
-  font-family: var(--font-display);
+  color: #666666;
+  font-family: 'Share Tech Mono', Consolas, 'Courier New', monospace;
   font-size: 0.72rem;
   letter-spacing: 2px;
   text-transform: uppercase;
 }
 
 .hero-eyebrow {
-  color: var(--accent);
+  color: #007a8f;
   margin-bottom: 0.75rem;
 }
 
@@ -250,12 +219,12 @@ main {
 }
 
 .section-eyebrow span {
-  color: var(--accent);
+  color: #007a8f;
 }
 
 .hero h2 {
-  color: var(--text-primary);
-  font-family: var(--font-display);
+  color: #111111;
+  font-family: 'Share Tech Mono', Consolas, 'Courier New', monospace;
   font-size: 1.5rem;
   border: none;
   margin-bottom: 0.5rem;
@@ -269,11 +238,11 @@ main {
   margin: 1.5rem 0 0.75rem;
   padding: 0.5rem 2.5rem;
   background: transparent;
-  color: var(--accent);
-  font-family: var(--font-display);
+  color: #007a8f;
+  font-family: 'Share Tech Mono', Consolas, 'Courier New', monospace;
   font-size: 1.8rem;
   font-weight: 400;
-  border: 1px solid var(--border);
+  border: 1px solid #111111;
   letter-spacing: 6px;
 }
 
@@ -289,7 +258,7 @@ main {
 }
 
 .hero .subtitle {
-  color: var(--plate-text-dim);
+  color: #444444;
   font-size: 1.05rem;
   font-weight: 400;
   letter-spacing: 1px;
@@ -298,24 +267,24 @@ main {
 
 section {
   position: relative;
-  background: var(--bg-card);
+  background: #ffffff;
   padding: 2rem;
   margin-bottom: 1.5rem;
-  border: 1px solid var(--border);
-  box-shadow: 4px 4px 0 var(--shadow-sm);
+  border: 1px solid #111111;
+  box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.15);
 }
 
 section:hover {
-  box-shadow: 5px 5px 0 var(--shadow-md);
+  box-shadow: 5px 5px 0 rgba(0, 0, 0, 0.25);
 }
 
 section h2 {
-  color: var(--text-heading);
-  font-family: var(--font-display);
+  color: #000000;
+  font-family: 'Share Tech Mono', Consolas, 'Courier New', monospace;
   font-size: 1.3rem;
   margin-bottom: 1rem;
   padding-bottom: 0.6rem;
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid #111111;
   font-weight: 400;
   letter-spacing: 1px;
   text-transform: uppercase;
@@ -323,17 +292,17 @@ section h2 {
 
 section h2::before {
   content: '[ ';
-  color: var(--accent);
+  color: #007a8f;
 }
 
 section h2::after {
   content: ' ]';
-  color: var(--accent);
+  color: #007a8f;
 }
 
 section h3 {
-  color: var(--text-subheading);
-  font-family: var(--font-display);
+  color: #222222;
+  font-family: 'Share Tech Mono', Consolas, 'Courier New', monospace;
   font-size: 1.02rem;
   margin: 1.5rem 0 0.75rem;
   font-weight: 400;
@@ -342,7 +311,7 @@ section h3 {
 
 section h3::before {
   content: '// ';
-  color: var(--accent);
+  color: #007a8f;
 }
 
 p {
@@ -350,14 +319,14 @@ p {
 }
 
 a {
-  color: var(--accent);
+  color: #007a8f;
   text-decoration: none;
   border-bottom: 1px dashed transparent;
   transition: color 0.08s linear, border-color 0.08s linear;
 }
 
 a:hover {
-  color: var(--accent-hover);
+  color: #005b6b;
   border-bottom-color: currentColor;
 }
 
@@ -374,25 +343,25 @@ a:hover {
 .btn {
   display: inline-block;
   padding: 0.65rem 1.5rem;
-  background: var(--accent);
+  background: #007a8f;
   color: #0c0f11;
-  border: 1px solid var(--accent);
-  font-family: var(--font-mono);
+  border: 1px solid #007a8f;
+  font-family: 'Share Tech Mono', Consolas, 'Courier New', monospace;
   font-size: 0.82rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1px;
   text-decoration: none;
-  box-shadow: 3px 3px 0 var(--shadow-sm);
+  box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.15);
   cursor: pointer;
   transition: background 0.08s linear, color 0.08s linear, box-shadow 0.08s linear, border-color 0.08s linear;
 }
 
 .btn:hover {
   background: transparent;
-  color: var(--accent);
-  border-color: var(--accent);
-  box-shadow: 4px 4px 0 var(--shadow-md);
+  color: #007a8f;
+  border-color: #007a8f;
+  box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.25);
 }
 
 .btn:active {
@@ -402,25 +371,25 @@ a:hover {
 
 .btn-secondary {
   background: transparent;
-  color: var(--text-primary);
-  border-color: var(--border);
+  color: #111111;
+  border-color: #111111;
 }
 
 .btn-secondary:hover {
-  color: var(--accent);
-  border-color: var(--accent);
+  color: #007a8f;
+  border-color: #007a8f;
 }
 
 .btn-danger {
   background: transparent;
-  color: var(--danger);
-  border-color: var(--danger);
+  color: #b3261e;
+  border-color: #b3261e;
 }
 
 .btn-danger:hover {
-  background: var(--danger);
+  background: #b3261e;
   color: #ffffff;
-  border-color: var(--danger);
+  border-color: #b3261e;
 }
 
 .time-grid {
@@ -428,12 +397,12 @@ a:hover {
   grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
   gap: 0;
   margin-top: 1rem;
-  background: var(--lcd-bg);
-  border: 1px solid var(--lcd-border);
+  background: #cbd5e1;
+  border: 1px solid #111111;
   box-shadow:
     inset 0 0 0 1px #000,
     inset 0 0 28px rgba(0, 0, 0, 0.65),
-    4px 4px 0 var(--shadow-sm);
+    4px 4px 0 rgba(0, 0, 0, 0.15);
   position: relative;
   overflow: hidden;
 }
@@ -450,7 +419,7 @@ a:hover {
 .time-card {
   background: transparent;
   border: none;
-  border-right: 1px dashed var(--lcd-grid);
+  border-right: 1px dashed rgba(0, 122, 143, 0.25);
   padding: 1.1rem 1rem 1.25rem;
   text-align: center;
   position: relative;
@@ -466,19 +435,19 @@ a:hover {
   font-size: 0.72rem;
   text-transform: uppercase;
   letter-spacing: 3px;
-  color: var(--lcd-dim);
+  color: #444444;
   margin-bottom: 0.4rem;
 }
 
 .time-card .time-value {
   display: block;
-  font-family: var(--font-display);
+  font-family: 'Share Tech Mono', Consolas, 'Courier New', monospace;
   font-size: 1.7rem;
   font-weight: 400;
-  color: var(--lcd-text);
+  color: #000000;
   text-shadow:
-    0 0 6px var(--accent-glow),
-    0 0 18px var(--accent-glow);
+    0 0 6px rgba(0, 122, 143, 0.1),
+    0 0 18px rgba(0, 122, 143, 0.1);
   font-variant-numeric: tabular-nums;
   letter-spacing: 2px;
 }
@@ -492,7 +461,7 @@ a:hover {
 .time-card .time-zone {
   display: block;
   font-size: 0.68rem;
-  color: var(--lcd-dim);
+  color: #444444;
   letter-spacing: 1px;
   margin-top: 0.3rem;
 }
@@ -500,12 +469,12 @@ a:hover {
 .time-hint {
   margin-top: 1rem;
   font-size: 0.78rem;
-  color: var(--text-muted);
+  color: #666666;
 }
 
 .time-hint::before {
   content: '// ';
-  color: var(--accent);
+  color: #007a8f;
 }
 
 .table-wrap {
@@ -518,25 +487,25 @@ a:hover {
   border-collapse: collapse;
   margin: 0.5rem 0 1.25rem;
   font-size: 0.85rem;
-  border: 1px solid var(--border);
+  border: 1px solid #111111;
 }
 
 .data-table th {
-  background: var(--plate-bg);
-  color: var(--plate-text-dim);
+  background: #ffffff;
+  color: #444444;
   padding: 0.5rem 0.75rem;
   text-align: left;
-  font-family: var(--font-mono);
+  font-family: 'Share Tech Mono', Consolas, 'Courier New', monospace;
   font-weight: 700;
   font-size: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 1px;
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid #111111;
 }
 
 .data-table td {
   padding: 0.4rem 0.75rem;
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid #111111;
   word-break: break-word;
 }
 
@@ -545,7 +514,7 @@ a:hover {
 }
 
 .data-table tr:nth-child(even) td {
-  background: var(--bg-section-alt);
+  background: #f8f9fa;
 }
 
 .data-table th:first-child {
@@ -555,7 +524,7 @@ a:hover {
 .hint,
 .muted {
   font-size: 0.78rem;
-  color: var(--text-muted);
+  color: #666666;
 }
 
 .field {
@@ -564,17 +533,17 @@ a:hover {
 
 .field label {
   display: block;
-  font-family: var(--font-display);
+  font-family: 'Share Tech Mono', Consolas, 'Courier New', monospace;
   font-size: 0.85rem;
   letter-spacing: 1px;
   text-transform: uppercase;
   margin-bottom: 0.4rem;
-  color: var(--text-subheading);
+  color: #222222;
 }
 
 .field label::before {
   content: '// ';
-  color: var(--accent);
+  color: #007a8f;
 }
 
 .field input,
@@ -582,10 +551,10 @@ a:hover {
   width: 100%;
   max-width: 520px;
   padding: 0.7rem 0.85rem;
-  background: var(--plate-bg);
-  border: 1px solid var(--border);
-  color: var(--text-primary);
-  font-family: var(--font-mono);
+  background: #ffffff;
+  border: 1px solid #111111;
+  color: #111111;
+  font-family: 'Share Tech Mono', Consolas, 'Courier New', monospace;
   font-size: 1rem;
   outline: none;
   transition: border-color 0.08s linear, box-shadow 0.08s linear;
@@ -597,12 +566,12 @@ a:hover {
 
 .field input:focus,
 .field select:focus {
-  border-color: var(--accent);
-  box-shadow: 3px 3px 0 var(--accent-glow);
+  border-color: #007a8f;
+  box-shadow: 3px 3px 0 rgba(0, 122, 143, 0.1);
 }
 
 .field input::placeholder {
-  color: var(--text-muted);
+  color: #666666;
 }
 
 .field-grid {
@@ -617,44 +586,44 @@ a:hover {
   gap: 0.8rem;
   margin-bottom: 1.25rem;
   padding: 0.8rem 0.9rem;
-  border: 1px solid var(--border);
-  background: var(--bg-section-alt);
+  border: 1px solid #111111;
+  background: #f8f9fa;
   cursor: pointer;
   transition: border-color 0.08s linear, background 0.08s linear, box-shadow 0.08s linear;
 }
 
 .checkbox-field:hover {
-  border-color: var(--accent);
-  background: var(--bg-card);
-  box-shadow: 3px 3px 0 var(--shadow-sm);
+  border-color: #007a8f;
+  background: #ffffff;
+  box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.15);
 }
 
 .checkbox-field input[type="checkbox"] {
   width: 1.05rem;
   height: 1.05rem;
   margin-top: 0.25rem;
-  accent-color: var(--accent);
+  accent-color: #007a8f;
   flex-shrink: 0;
   cursor: pointer;
 }
 
 .checkbox-field input[type="checkbox"]:focus-visible {
-  outline: 2px dashed var(--accent);
+  outline: 2px dashed #007a8f;
   outline-offset: 2px;
 }
 
 .checkbox-field .checkbox-title {
   display: block;
-  font-family: var(--font-display);
+  font-family: 'Share Tech Mono', Consolas, 'Courier New', monospace;
   font-size: 0.85rem;
   letter-spacing: 1px;
   text-transform: uppercase;
-  color: var(--text-subheading);
+  color: #222222;
 }
 
 .checkbox-field .checkbox-title::before {
   content: '// ';
-  color: var(--accent);
+  color: #007a8f;
 }
 
 .checkbox-field .hint {
@@ -674,21 +643,21 @@ a:hover {
 .error {
   padding: 0.85rem 1rem;
   margin-bottom: 1.25rem;
-  border: 1px solid var(--accent);
-  background: var(--accent-glow);
-  color: var(--text-primary);
+  border: 1px solid #007a8f;
+  background: rgba(0, 122, 143, 0.1);
+  color: #111111;
   font-size: 0.85rem;
 }
 
 .notice::before {
   content: '// ';
-  color: var(--accent);
+  color: #007a8f;
 }
 
 .error {
-  border-color: var(--danger);
-  background: var(--danger-bg);
-  color: var(--danger);
+  border-color: #b3261e;
+  background: rgba(179, 38, 30, 0.08);
+  color: #b3261e;
 }
 
 .error::before {
@@ -696,26 +665,26 @@ a:hover {
 }
 
 .danger-zone {
-  border-color: var(--danger);
+  border-color: #b3261e;
 }
 
 .danger-zone h2 {
-  color: var(--danger);
-  border-bottom-color: var(--danger);
+  color: #b3261e;
+  border-bottom-color: #b3261e;
 }
 
 .danger-zone h2::before,
 .danger-zone h2::after {
-  color: var(--danger);
+  color: #b3261e;
 }
 
 footer {
-  background: var(--footer-bg);
-  border-top: 1px solid var(--border);
+  background: #ffffff;
+  border-top: 1px solid #111111;
   text-align: center;
   padding: 1.25rem;
   font-size: 0.82rem;
-  color: var(--footer-text-muted);
+  color: #666666;
   letter-spacing: 0.3px;
 }
 
@@ -724,12 +693,12 @@ footer p {
 }
 
 footer a {
-  color: var(--footer-text);
+  color: #111111;
   border-bottom-color: transparent;
 }
 
 footer a:hover {
-  color: var(--accent);
+  color: #007a8f;
 }
 
 .footer-muted {
@@ -776,7 +745,7 @@ footer a:hover {
 
   .time-card {
     border-right: none;
-    border-bottom: 1px dashed var(--lcd-grid);
+    border-bottom: 1px dashed rgba(0, 122, 143, 0.25);
   }
 
   .time-card:last-child {
@@ -795,7 +764,7 @@ footer a:hover {
   nav {
     order: 3;
     width: 100%;
-    border-top: 1px solid var(--border);
+    border-top: 1px solid #111111;
     padding-top: 0.35rem;
   }
 
@@ -840,7 +809,7 @@ static const char INDEX_HTML[] PROGMEM = R"=====(
     <div class="brand-copy">
       <div class="brand-line">
         <h1>ESPRouter</h1>
-        <span class="version-tag">v1.0</span>
+        <span class="version-tag">v1.1</span>
       </div>
       <p class="brand-eyebrow"><span>//</span> ESP8266 ACCESS POINT</p>
     </div>
@@ -891,6 +860,7 @@ static const char INDEX_HTML[] PROGMEM = R"=====(
         <tbody>
           <tr><th>SSID</th><td id="ssid">&ndash;</td></tr>
           <tr><th>IP Address</th><td id="ip">&ndash;</td></tr>
+          <tr><th>Hostname</th><td>esprouter.local</td></tr>
           <tr><th>MAC (AP)</th><td id="mac">&ndash;</td></tr>
           <tr><th>Channel</th><td id="channel">&ndash;</td></tr>
           <tr><th>Hidden</th><td id="hidden">&ndash;</td></tr>
@@ -921,10 +891,10 @@ static const char INDEX_HTML[] PROGMEM = R"=====(
     <div class="table-wrap">
       <table class="data-table">
         <thead>
-          <tr><th>MAC Address</th><th>IP Address</th></tr>
+          <tr><th>Name</th><th>MAC Address</th><th>IP Address</th></tr>
         </thead>
         <tbody id="stationList">
-          <tr><td colspan="2" class="muted">Loading ...</td></tr>
+          <tr><td colspan="3" class="muted">Loading ...</td></tr>
         </tbody>
       </table>
     </div>
@@ -933,7 +903,7 @@ static const char INDEX_HTML[] PROGMEM = R"=====(
 </main>
 
 <footer>
-  <p>ESPRouter v1.0 &middot; ESP8266 Access Point</p>
+  <p>ESPRouter v1.1 &middot; ESP8266 Access Point</p>
 </footer>
 
 <script src="/app.js"></script>
@@ -960,7 +930,7 @@ static const char CONFIG_HTML[] PROGMEM = R"=====(
     <div class="brand-copy">
       <div class="brand-line">
         <h1>ESPRouter</h1>
-        <span class="version-tag">v1.0</span>
+        <span class="version-tag">v1.1</span>
       </div>
       <p class="brand-eyebrow"><span>//</span> ESP8266 ACCESS POINT</p>
     </div>
@@ -980,13 +950,13 @@ static const char CONFIG_HTML[] PROGMEM = R"=====(
     <p class="subtitle">Set up or change the access point</p>
   </div>
 
-  <section>
-    <p class="section-eyebrow"><span>//</span> ACCESS POINT</p>
-    <h2>Access Point</h2>
-    %SETUPNOTICE%
-    %ERROR%
-    %NOTICE%
-    <form method="post" action="/save" autocomplete="off">
+  <form method="post" action="/save" autocomplete="off">
+    <section>
+      <p class="section-eyebrow"><span>//</span> ACCESS POINT</p>
+      <h2>Access Point</h2>
+      %SETUPNOTICE%
+      %ERROR%
+      %NOTICE%
       <div class="field">
         <label for="ssid">Wi-Fi Name (SSID)</label>
         <input id="ssid" name="ssid" type="text" maxlength="31" required value="%SSID%" placeholder="My network">
@@ -1016,9 +986,39 @@ static const char CONFIG_HTML[] PROGMEM = R"=====(
           <span class="hint">The SSID is not actively broadcast and must be added manually on the client.</span>
         </span>
       </label>
+    </section>
+
+    <section>
+      <p class="section-eyebrow"><span>//</span> SECURITY</p>
+      <h2>Admin Access</h2>
+      <p>Optionally require a browser login before the configuration can be viewed or changed. The status page stays public.</p>
+      <label class="checkbox-field" for="adminEnabled">
+        <input id="adminEnabled" name="adminEnabled" type="checkbox" value="1" %ADMIN_CHECKED%>
+        <span>
+          <span class="checkbox-title">Require login for settings</span>
+          <span class="hint">Protects configuration, saving, client names, restart, and factory reset.</span>
+        </span>
+      </label>
+      <div class="field">
+        <label for="adminPass">Admin Password</label>
+        <input id="adminPass" name="adminPass" type="password" maxlength="63" value="" placeholder="empty = keep current">
+        <p class="hint">Username: <strong>admin</strong>. Password: 8 to 63 characters. Leave empty to keep the current password. Disable the checkbox to remove protection. Current: <strong>%ADMINSTATE%</strong></p>
+      </div>
       <div class="form-actions">
         <button class="btn" type="submit">Save &amp; Restart</button>
         %BACKLINK%
+      </div>
+    </section>
+  </form>
+
+  <section>
+    <p class="section-eyebrow"><span>//</span> CLIENTS</p>
+    <h2>Client Names</h2>
+    <p>Assign friendly names to connected or previously seen devices. Names are stored by MAC address and shown on the status page.</p>
+    <form method="post" action="/names" autocomplete="off">
+      %NAMEROWS%
+      <div class="form-actions">
+        <button class="btn btn-secondary" type="submit">Save Names</button>
       </div>
     </form>
   </section>
@@ -1043,8 +1043,8 @@ static const char CONFIG_HTML[] PROGMEM = R"=====(
 </main>
 
 <footer>
-  <p>ESPRouter v1.0 &middot; ESP8266 Access Point</p>
-  <p class="footer-muted">Any connected client can change these settings.</p>
+  <p>ESPRouter v1.1 &middot; ESP8266 Access Point</p>
+  <p class="footer-muted">Settings can be protected with an optional admin login.</p>
 </footer>
 
 <script src="/app.js"></script>
@@ -1071,7 +1071,7 @@ static const char ACTION_HTML[] PROGMEM = R"=====(
     <div class="brand-copy">
       <div class="brand-line">
         <h1>ESPRouter</h1>
-        <span class="version-tag">v1.0</span>
+        <span class="version-tag">v1.1</span>
       </div>
       <p class="brand-eyebrow"><span>//</span> ESP8266 ACCESS POINT</p>
     </div>
@@ -1092,7 +1092,7 @@ static const char ACTION_HTML[] PROGMEM = R"=====(
   </section>
 </main>
 <footer>
-  <p>ESPRouter v1.0 &middot; ESP8266 Access Point</p>
+  <p>ESPRouter v1.1 &middot; ESP8266 Access Point</p>
 </footer>
 <script src="/app.js"></script>
 </body>
@@ -1137,16 +1137,27 @@ static const char APP_JS[] PROGMEM = R"=====(
     if (el) el.textContent = value;
   }
 
+  function escapeHtml(value) {
+    return String(value == null ? '' : value)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#39;');
+  }
+
   function renderStations(stations) {
     var tbody = document.getElementById('stationList');
     if (!tbody) return;
     if (!stations || stations.length === 0) {
-      tbody.innerHTML = '<tr><td colspan="2" class="muted">No devices connected</td></tr>';
+      tbody.innerHTML = '<tr><td colspan="3" class="muted">No devices connected</td></tr>';
       return;
     }
     var html = '';
     for (var i = 0; i < stations.length; i++) {
-      html += '<tr><td>' + stations[i].mac + '</td><td>' + stations[i].ip + '</td></tr>';
+      var name = stations[i].name ? escapeHtml(stations[i].name) : '&ndash;';
+      html += '<tr><td>' + name + '</td><td>' + escapeHtml(stations[i].mac) +
+        '</td><td>' + escapeHtml(stations[i].ip) + '</td></tr>';
     }
     tbody.innerHTML = html;
   }

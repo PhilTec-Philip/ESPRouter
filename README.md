@@ -10,6 +10,9 @@ On first boot, the ESP8266 opens an open setup Wi-Fi network. After setup, it st
 - Captive portal only during first setup; normal operation has no forced portal
 - Configurable SSID, password, Wi-Fi channel, hidden network, and maximum client count
 - Automatic channel selection or manual channel 1 to 13
+- Optional admin login to protect the configuration page and all settings changes
+- Friendly client names stored per MAC address and shown on the status page
+- mDNS hostname `http://esprouter.local` in addition to the IP address
 - Status page with uptime, free heap, clients, SSID, IP, MAC, channel, security, and device information
 - List of currently connected devices
 - Settings persist in EEPROM across normal restarts and power cycles
@@ -25,7 +28,7 @@ On first boot, the ESP8266 opens an open setup Wi-Fi network. After setup, it st
 3. Open `http://192.168.4.1` in a browser. During first setup, many devices open the page automatically through the captive portal.
 4. Set the network name, password, channel, maximum clients, and optionally **Hide Wi-Fi network**.
 5. Select **Save & Restart**.
-6. Connect to the newly configured Wi-Fi network and open `http://192.168.4.1` again.
+6. Connect to the newly configured Wi-Fi network and open `http://192.168.4.1` or `http://esprouter.local` again.
 
 The setup Wi-Fi network stays open until a configuration has been saved. After setup, the captive portal and wildcard DNS are disabled; devices only show it again after a factory reset.
 
@@ -40,6 +43,7 @@ The setup Wi-Fi network stays open until a configuration has been saved. After s
 | Wi-Fi channel | `Automatic` |
 | Maximum clients | `4` |
 | Hidden network | off |
+| Admin login | off |
 
 There is no default password for the access point.
 
@@ -50,7 +54,10 @@ There is no default password for the access point.
 - **Channel:** **Automatic** scans at boot and picks the least busy of channels 1, 6 and 11. Manual selection allows 1 to 13; channels 1, 6 and 11 usually overlap the least.
 - **Maximum clients:** 1 to 4 simultaneous devices.
 - **Hide network:** the SSID is not actively broadcast and must be added manually on the client.
-- After saving, the ESP8266 restarts automatically.
+- **Admin login:** optional. When enabled, `/config`, saving, client names, restart, and factory reset require a browser login. The username is `admin`; the password is 8 to 63 characters. Disable the checkbox to remove protection. The status page stays public. Credentials are sent over plain HTTP on the local network. If the password is lost, reflash the firmware or erase the flash to return to open setup mode.
+- **Client names:** optional names of 1 to 23 characters, stored per MAC address and shown on the status page. Clearing a name removes it. Up to 8 names are stored.
+- **mDNS:** the web interface is also reachable at `http://esprouter.local` if the client supports mDNS.
+- After saving the access point settings, the ESP8266 restarts automatically. Saving client names does not restart.
 - Normal restarts keep the settings. Flashing a new firmware build clears them once; reflashing the exact same binary cannot be detected.
 - **Factory Reset** deletes all settings and restarts in open setup mode.
 
